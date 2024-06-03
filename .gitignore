@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Redis
+dump.rdb
+appendonly.aof
+
+# Docker
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# Miscellaneous
+.DS_Store
+
+# Ignore data directory to prevent storing Redis data files in the repository
+data/

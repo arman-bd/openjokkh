@@ -1,0 +1,17 @@
+services:
+  openjokkh:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "80:8080"
+    volumes:
+      - ../data:/usr/src/app/data
+
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongo_test_data:/data/db
+
+volumes:
+  mongo_test_data:
