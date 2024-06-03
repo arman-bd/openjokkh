@@ -34,13 +34,13 @@
             width: 100%;
         }
         #top-row {
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
         }
         #middle-row {
             align-items: center;
             margin-top: 10px;
+            gap: 10px;
         }
         #bottom-row {
             justify-content: space-between;
@@ -80,12 +80,18 @@
             margin-left: auto;
             align-self: flex-end;
         }
+        #reload {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="captcha-container">
         <div id="top-row">
             <div id="text">Click on the Checkbox</div>
+            <img id="reload" src="/res/reload.png" alt="Reload">
         </div>
         <div id="middle-row">
             <div id="custom-checkbox">
@@ -105,6 +111,7 @@
     <script>
         let challengeToken = '';
         let challenge = '';
+        let captchaSolved = false;
 
         function fetchChallenge() {
             fetch('/api/v1/challenge')
@@ -143,6 +150,8 @@
             fetchChallenge();
             const customCheckbox = document.getElementById('custom-checkbox');
             customCheckbox.addEventListener('click', function () {
+                if (captchaSolved) return;
+
                 customCheckbox.classList.add('checked');
                 const checkboxIcon = document.getElementById('checkbox-icon');
                 checkboxIcon.src = '/res/tick.png';
@@ -151,12 +160,21 @@
                 parent.postMessage({ type: 'captcha-solved', challengeToken, solution: solution.toString() }, '*');
             });
 
+            const reloadIcon = document.getElementById('reload');
+            reloadIcon.addEventListener('click', function () {
+                captchaSolved = false;
+                document.getElementById('message').innerHTML = '';
+                document.getElementById('checkbox-icon').src = '';
+                document.getElementById('custom-checkbox').classList.remove('checked');
+                fetchChallenge();
+            });
+
             window.addEventListener('message', (event) => {
                 if (event.data && event.data.type === 'captcha-validation') {
                     displayMessage(event.data.success);
+                    captchaSolved = true;
                     const checkboxIcon = document.getElementById('checkbox-icon');
                     checkboxIcon.src = event.data.success ? '/res/tick.png' : '/res/cross.png';
-                    setTimeout(fetchChallenge, 180000); // Reload/invalidate after 3 minutes
                 }
             });
         });

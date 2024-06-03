@@ -1,7 +1,7 @@
 {
     "name": "openjokkh",
     "version": "1.0.0",
-    "description": "A recaptcha-like service in Node.js using TypeScript, TypeORM, and SQLite",
+    "description": "An open source project to protect the internet from bad actors",
     "main": "dist/src/api/app.js",
     "scripts": {
         "start": "ts-node src/api/app.ts",
