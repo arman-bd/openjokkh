@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
         customCheckbox.classList.add('checked');
         const checkboxIcon = document.getElementById('checkbox-icon');
         checkboxIcon.src = '/res/tick.png';
-        const captchaResponse = 'checkbox_clicked';
         const solution = solveJSChallenge(challenge);
         const mouseMovementData = JSON.stringify(mouseMovements);
 

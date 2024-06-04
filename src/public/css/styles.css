@@ -32,13 +32,14 @@ body {
 }
 #middle-row {
     align-items: center;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-left: 40px;
     gap: 10px;
 }
 #bottom-row {
     justify-content: space-between;
     align-items: right;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 #custom-checkbox {
     width: 40px;

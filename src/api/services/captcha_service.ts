@@ -20,10 +20,7 @@ function analyzeMouseMovements(movements: Array<{x: number, y: number, timestamp
 
       lastMovement = movement;
   }
-
-  console.log(`Irregular movements: ${irregularMovements}`);
-  console.log(`Total movements: ${movements.length}`);
-  console.log(`Irregularity ratio: ${irregularMovements / movements.length}`);
+  
   // Check if a significant portion of movements are 'irregular'
   return (irregularMovements / movements.length) < 0.3;
 }
