@@ -34,12 +34,13 @@
             const challengeToken = event.data.challengeToken;
             const captchaResponse = 'checkbox_clicked';
             const solution = event.data.solution;
+            const mouseMovementData = event.data.mouseMovementData;
             fetch('/api/v1/validate', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ apiKey, challengeToken, captchaResponse, solution })
+                body: JSON.stringify({ apiKey, challengeToken, captchaResponse, solution, mouseMovementData })
             })
             .then(response => response.json())
             .then(data => {

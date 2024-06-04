@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    background-color: transparent;
+}
+#captcha-container {
+    background-color: #ffffff;
+    width: 300px;
+    height: 100px;
+    border: 2px solid #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+#top-row, #middle-row, #bottom-row {
+    display: flex;
+    width: 100%;
+}
+#top-row {
+    justify-content: space-between;
+    align-items: center;
+}
+#middle-row {
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+#bottom-row {
+    justify-content: space-between;
+    align-items: right;
+    margin-top: 10px;
+}
+#custom-checkbox {
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#custom-checkbox img {
+    width: 40px;
+    height: 40px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#custom-checkbox.checked img {
+    display: block;
+}
+#message {
+    font-weight: bold;
+    font-size: 24px;
+    color: green;
+    margin-left: 10px;
+}
+#branding {
+    font-size: 12px;
+    color: #000000;
+    margin-left: auto;
+    align-self: flex-end;
+}
+#reload {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
