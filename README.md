@@ -3,6 +3,9 @@
 
 OpenJokkh is an open-source solution for blocking bots and ensuring real user interactions on your website. Designed to be easy to integrate and customize, it provides security while maintaining a seamless user experience. Protect your users' data from large corporations, even if it's just a bot.
 
+## Naming History
+The name **OpenJokkh** is inspired by **Jokkho** or **Jokkh**, benevolent guardians from Bengali folklore known for protecting hidden treasures. Just as Jokkho guardians safeguard valuable wealth, OpenJokkh aims to protect your website's interactions and data from malicious bots and spam, ensuring privacy and security.
+
 ## Disclaimer
 
 **This project is still in progress.** Some features may not be fully implemented or tested. Use at your own risk, and feel free to contribute to its development.
